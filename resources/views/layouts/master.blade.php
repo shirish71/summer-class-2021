@@ -9,7 +9,8 @@
 </head>
 <body>
 <a href="{{url('/products')}}">go to products</a><br>
-<a href="{{route('blog')}}">go to blog</a>
+<a href="{{route('blog')}}">go to blog</a><br>
+<a href="{{route('student')}}">go to students</a>
 @yield('content')
 </body>
 </html>

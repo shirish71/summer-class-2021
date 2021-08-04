@@ -20,14 +20,17 @@ Route::get('/', function () {
 //Route::get('/blog',function (){
 //    return view('blog');
 //});
+Route::get('/students', [\App\Http\Controllers\StudentController::class, 'index'])
+    ->name('student');
 
-Route::get('/blog', [\App\Http\Controllers\BlogController::class, 'index'])->name('blog');
+Route::get('/blog', [\App\Http\Controllers\BlogController::class, 'index'])
+    ->name('blog');
 
 Route::get('/blog/{name}', function ($name) {
     return $name;
 });
 
-Route::get('/products',function (){
+Route::get('/products', function () {
     return view('product');
 });
 
