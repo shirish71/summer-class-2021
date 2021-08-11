@@ -2,7 +2,8 @@
 @section('site_title','Student')
 @section('content')
     <h1>This is Student</h1>
-    <table>
+    <a class="btn btn-primary" href="{{route('student.create')}}">Create Student</a>
+    <table class="table">
         <tr>
             <th>SN.</th>
             <th>Id</th>

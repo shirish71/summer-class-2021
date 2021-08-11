@@ -23,6 +23,15 @@ Route::get('/', function () {
 Route::get('/students', [\App\Http\Controllers\StudentController::class, 'index'])
     ->name('student');
 
+
+Route::get('/students/create', [\App\Http\Controllers\StudentController::class, 'create'])
+    ->name('student.create');
+
+
+Route::post('/students', [\App\Http\Controllers\StudentController::class, 'store'])
+    ->name('student.store');
+
+
 Route::get('/blog', [\App\Http\Controllers\BlogController::class, 'index'])
     ->name('blog');
 
