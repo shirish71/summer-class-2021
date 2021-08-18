@@ -13,6 +13,7 @@
             <th>Email</th>
             <th>Contact no</th>
             <th>Active</th>
+            <th>Action</th>
         </tr>
         @foreach($students as $student)
             <tr>
@@ -24,6 +25,15 @@
                 <td>{{$student->email}}</td>
                 <td>{{$student->contact_no}}</td>
                 <td>{{$student->active}}</td>
+                <td>
+                    <a class="btn btn-success" href="{{route('student.show',$student->id)}}">Show</a>
+                    <a class="btn btn-warning mb-1" href="{{route('student.edit',$student->id)}}">Edit</a>
+                    <form action="{{route('student.destroy',$student->id)}}" method="post">
+                        @method('delete')
+                        @csrf
+                        <button class="btn btn-danger">Delete</button>
+                    </form>
+                </td>
             </tr>
         @endforeach
     </table>

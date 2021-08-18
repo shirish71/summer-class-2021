@@ -27,9 +27,20 @@ Route::get('/students', [\App\Http\Controllers\StudentController::class, 'index'
 Route::get('/students/create', [\App\Http\Controllers\StudentController::class, 'create'])
     ->name('student.create');
 
-
 Route::post('/students', [\App\Http\Controllers\StudentController::class, 'store'])
     ->name('student.store');
+
+Route::get('/students/{id}', [\App\Http\Controllers\StudentController::class, 'show'])
+    ->name('student.show');
+
+Route::get('/students/edit/{id}', [\App\Http\Controllers\StudentController::class, 'edit'])
+    ->name('student.edit');
+
+Route::put('/students/update/{id}', [\App\Http\Controllers\StudentController::class, 'update'])
+    ->name('student.update');
+
+Route::delete('/students/delete/{id}', [\App\Http\Controllers\StudentController::class, 'destroy'])
+    ->name('student.destroy');
 
 
 Route::get('/blog', [\App\Http\Controllers\BlogController::class, 'index'])
